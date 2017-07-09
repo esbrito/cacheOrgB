@@ -1,43 +1,25 @@
 ## O que foi modificado da configuração base original e porquê? ##
 
-Foi dobrada a latência de Miss da Cache L1 e L2 para ter mais impacto no caso do dado não estar na Cache e diminuido pela metade a latência de Hit.
+Foi dobrada a latência de Miss da Cache L1 de dados e da Cache L2 para ter mais impacto no caso do dado não estar na Cache e diminuido pela metade a latência de Hit.
+
 O objetivo disso foi justamente para ter mais impácto se for necessário buscar dados que não estão na cache.
 
-## Quais as três configurações diferentes utilizadas a partir da configuração fixa ##
+## Quais os parâmetros a serem variados? ##
 
-Variar tamanho da L1 cache de instruções
+* ### Tamanho da Cache L1 de Dados ###
 
-### Configuração 1: ###
+* ### Associatividade da Cache L1 de Dados ###
 
-É a mesma que com os valores da configuração fixa
-
-### Configuração 2: ###
-
-
-### Configuração 3: ###
-
+* ### Tamanho da fila de loads ###
 
 
 ## Quais algorítmos utilizados? ##
 
-# NÃO FOI ENCONTRADA DIFERENCA NOS RESULTADOS. TENTAR OUTRA ABORDAGEM ALGORÍTIMICA #
-Algoritmos iguais, mas sendo compilados modificando a flag de otimização do GCC.
-O algorítmo possuí bastantes loops, de forma que podem ser geradas muitas instruções dependendo da otimização.
+Algorítmo para dizer se existe um trio de números, em dado array, que possui uma relação de Pitágoras (x² = y² + z², sendo x, y e z, quaisquer valores do array, desde que sejam de posições distintas)
 
-### Algorítimo 1: ###
+**Algorítmo com complexidade O(n³)**
 
-**Flag -O2**
+**Algorítmo com complexidade O(n²)**
 
-Faz com que é otimizado mas somente ativando todas as opções -O2 que não aumentam o tamanho do código gerado.
-
-### Algorítimo 2: ###
-
-**Sem flag**
-Não é utilizada nenhuma flag na compilação
-
-### Algorítimo 3: ###
-
-**Flag -03**
-
-O maior nível de otimização possível. Ele permite otimizações que são caras em termos de tempo de compilação e uso de memória.
+**Algorítmo recursivo - baseado no de complexidade O(n³)**
 

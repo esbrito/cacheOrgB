@@ -11,14 +11,14 @@
 from m5.objects import BaseCache
 
 ## Não modificar esta classe. Modifique as classes L1ICache ou
-## L1DCache.
+## L1DCache. 
 class L1Cache(BaseCache):
     """Cache L1 com parâmetros padrões"""
 
     def __init__(self):
         super(BaseCache, self).__init__()
         pass
-
+    
     def connectCPU(self, cpu_port):
         """"Conecta a porta da cache à porta da CPU. Vai ser
             definida nas subclasses."""
@@ -50,7 +50,7 @@ class L1ICache(L1Cache):
     def connectCPU(self, cpu):
         """"Conecta a porta da cache à porta de instruções da CPU"""
         self.cpu_side = cpu.icache_port
-
+    
     def __init__(self):
         super(L1ICache, self).__init__()
 
@@ -59,23 +59,23 @@ class L1DCache(L1Cache):
     """Cache L1 de dados com parâmetros padrões"""
 
     ## Tamanho da cache L1-D
-    size = '2kB'
+    size = '32kB'
     ## Associatividade da cache L1-D
-    assoc = 1
+    assoc = 4
     ## Latência do hit da cache L1-D
-    hit_latency = 4
+    hit_latency = 2
     ## Latência do miss da cache L1-D
-    response_latency = 1
+    response_latency = 2
 
     ## Para uso do simulador: não modificar.
     def connectCPU(self, cpu):
         """"Conecta a porta da cache à porta de dados da CPU"""
         self.cpu_side = cpu.dcache_port
-
+        
     def __init__(self):
         super(L1DCache, self).__init__()
 
-## Cache L2.
+## Cache L2. 
 class L2Cache(BaseCache):
     """Cache L2 compartilhada com parâmetros padrões"""
 
@@ -84,9 +84,9 @@ class L2Cache(BaseCache):
     ## Associatividade da cache L2
     assoc = 8
     ## Latência do hit da cache L2
-    hit_latency = 16
+    hit_latency = 8
     ## Latência do miss da cache L2
-    response_latency = 6
+    response_latency = 12
 
     ## Para uso do simulador: não modificar.
     def __init__(self):
@@ -102,5 +102,5 @@ class L2Cache(BaseCache):
 
     mshrs = 20
     tgts_per_mshr = 12
-
+    
     is_top_level = False
