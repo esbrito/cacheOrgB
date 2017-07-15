@@ -65,7 +65,7 @@ class L1DCache(L1Cache):
     ## Latência do hit da cache L1-D
     hit_latency = 2
     ## Latência do miss da cache L1-D
-    response_latency = 2
+    response_latency = 1
 
     ## Para uso do simulador: não modificar.
     def connectCPU(self, cpu):
@@ -86,7 +86,7 @@ class L2Cache(BaseCache):
     ## Latência do hit da cache L2
     hit_latency = 8
     ## Latência do miss da cache L2
-    response_latency = 12
+    response_latency = 6
 
     ## Para uso do simulador: não modificar.
     def __init__(self):

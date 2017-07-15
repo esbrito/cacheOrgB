@@ -1,8 +1,9 @@
 ## O que foi modificado da configuração base original e porquê? ##
 
-Foi dobrada a latência de Miss da Cache L1 de dados e da Cache L2 para ter mais impacto no caso do dado não estar na Cache e diminuido pela metade a latência de Hit.
+Processamento de 2GHz para 1GHz
+Alterado o Hit Latency de L1-D de 4 para 2
+Alterado o Hit Latency de L2-D de 16 para 8
 
-O objetivo disso foi justamente para ter mais impácto se for necessário buscar dados que não estão na cache.
 
 ## Quais os parâmetros a serem variados? ##
 

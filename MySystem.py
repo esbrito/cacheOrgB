@@ -23,7 +23,7 @@ class MySystem(System):
 ######################################################################
         self.clk_domain = SrcClockDomain()
         self.clk_domain.voltage_domain = VoltageDomain()
-        self.clk_domain.clock = '2GHz'
+        self.clk_domain.clock = '1GHz'
 
 ######################################################################
 ## mem_mode e mem_ranges - Não modificar.
