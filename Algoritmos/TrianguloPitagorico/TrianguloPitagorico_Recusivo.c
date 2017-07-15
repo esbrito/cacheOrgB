@@ -17,7 +17,7 @@ int countTriplet(int ar[], int n, int i, int j, int k, int counter) {
   if(i == n - 2) return counter;
 
   int x = ar[i]*ar[i], y = ar[j]*ar[j], z = ar[k]*ar[k];
-  if (x == y + z || y == x + z || z == x + y)
+  if (x == y + z || y == x + z || z == x + y){
     return countTriplet(ar, n, i, j, k, counter + 1);
   }
 
@@ -30,7 +30,7 @@ int main() {
 
     int ar_size = sizeof(ar)/sizeof(ar[0]);
 
-    printf("NUMBER OF TRIPLET WITH RECURSIVE %d\n", countTriplet(ar, ar_size, 0, 1, 1, 0));
+    printf("NUMBER OF TRIPLET WITH RECURSIVE %d\n", countTriplet(ar, ar_size, 0, 1, 1, 0)/2); //Divide by 2, because will count x + y and y + x for example
 
     return 0;
 }
